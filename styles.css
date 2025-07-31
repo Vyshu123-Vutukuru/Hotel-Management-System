@@ -1,0 +1,62 @@
+/* --- New Styles for Inner Pages & Animations --- */
+
+/* Page Header */
+.page-header {
+    padding: 8rem 0;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+}
+.page-header::after { /* Overlay */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+.page-header .container {
+    position: relative;
+    z-index: 2;
+}
+.page-header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+.page-header p {
+    font-size: 1.25rem;
+}
+
+/* Room Listing Styles */
+.room-card ul {
+    list-style-type: '✓  ';
+    padding-left: 1.2rem;
+}
+.room-card ul li {
+    padding-left: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Contact Form */
+.form-control, .form-select {
+    min-height: 50px;
+}
+
+/* Scroll Animation */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Weather Widget */
+#weather-widget {
+    font-size: 0.9rem;
+}
