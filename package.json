@@ -1,0 +1,84 @@
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("Welcome to The Royal Heritage Palace website!");
+
+    // --- Date Picker Logic ---
+    const today = new Date().toISOString().split('T')[0];
+    const checkinInput = document.getElementById('checkin');
+    const checkoutInput = document.getElementById('checkout');
+
+    if (checkinInput) {
+        checkinInput.setAttribute('min', today);
+        checkinInput.addEventListener('change', function() {
+            if (checkoutInput) {
+                checkoutInput.setAttribute('min', this.value);
+                if (checkoutInput.value < this.value) {
+                    checkoutInput.value = this.value;
+                }
+            }
+        });
+    }
+
+    // --- Scroll Animation Logic ---
+    const scrollElements = document.querySelectorAll(".animate-on-scroll");
+
+    const elementInView = (el, dividend = 1) => {
+        const elementTop = el.getBoundingClientRect().top;
+        return (
+            elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+        );
+    };
+
+    const displayScrollElement = (element) => {
+        element.classList.add("is-visible");
+    };
+
+    const hideScrollElement = (element) => {
+        element.classList.remove("is-visible");
+    };
+
+    const handleScrollAnimation = () => {
+        scrollElements.forEach((el) => {
+            if (elementInView(el, 1.25)) {
+                displayScrollElement(el);
+            } else {
+                hideScrollElement(el);
+            }
+        });
+    };
+    
+    // Initial check on page load
+    handleScrollAnimation();
+    window.addEventListener("scroll", handleScrollAnimation);
+
+    // --- Live Weather Widget ---
+    const weatherWidget = document.getElementById('weather-widget');
+    if (weatherWidget) {
+        // Coordinates for Kadapa, Andhra Pradesh
+        const lat = 14.47;
+        const lon = 78.82;
+        const url = https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const temp = data.current.temperature_2m;
+                const weatherCode = data.current.weather_code;
+                const weatherIcon = getWeatherIcon(weatherCode);
+                weatherWidget.innerHTML = ${weatherIcon} ${temp}°C in Kadapa;
+            })
+            .catch(error => {
+                console.error("Error fetching weather:", error);
+                weatherWidget.innerHTML = "Weather data unavailable.";
+            });
+    }
+});
+
+function getWeatherIcon(code) {
+    if (code === 0) return '☀'; // Clear sky
+    if (code <= 3) return '⛅'; // Partly cloudy
+    if (code > 3 && code <= 48) return '☁'; // Fog
+    if (code > 48 && code <= 65) return '🌧'; // Rain
+    if (code > 65 && code <= 77) return '❄'; // Snow
+    if (code > 77) return '⛈'; // Thunderstorm
+    return '-';
+}
