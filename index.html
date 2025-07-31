@@ -1,12 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><title>Hotel Login</title></head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Royal Heritage Palace - Welcome</title>
+    <meta name="description" content="Experience timeless luxury and royal grandeur at The Royal Heritage Palace, where history and modern comfort converge.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
 <body>
-<h2>Login Page</h2>
-<form>
-  <input type="text" placeholder="Username" required>
-  <input type="password" placeholder="Password" required>
-  <button type="submit">Login</button>
-</form>
+
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#">The Royal Heritage</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="rooms.html">Rooms & Suites</a></li>
+                        <li class="nav-item"><a class="nav-link" href="dining.html">Dining</a></li>
+                        <li class="nav-item"><a class="nav-link" href="events.html">Weddings & Events</a></li>
+                        <li class="nav-item"><a class="nav-link" href="offers.html">Offers</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1549987705-2ce7c5143d12?q=80&w=2070&auto=format&fit=crop');"></div>
+                    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2070&auto=format&fit=crop');"></div>
+                    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=2070&auto=format&fit=crop');"></div>
+                </div>
+            </div>
+            <div class="hero-content">
+                <h1>Experience Royal Legacy</h1>
+                <p>A sanctuary of timeless luxury and majestic comfort</p>
+                <a href="#booking" class="btn btn-primary btn-lg">Book Your Stay</a>
+            </div>
+        </section>
+
+        <section id="booking" class="booking-widget-section py-5">
+            <div class="container">
+                <form class="row g-3 align-items-end p-4 bg-light shadow-sm rounded">
+                    <div class="col-lg-3 col-md-6">
+                        <label for="checkin" class="form-label">Check-in Date</label>
+                        <input type="date" class="form-control" id="checkin">
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <label for="checkout" class="form-label">Check-out Date</label>
+                        <input type="date" class="form-control" id="checkout">
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <label for="adults" class="form-label">Adults</label>
+                        <select id="adults" class="form-select">
+                            <option selected>1</option><option>2</option><option>3</option><option>4</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <label for="children" class="form-label">Children</label>
+                        <select id="children" class="form-select">
+                            <option selected>0</option><option>1</option><option>2</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-2 col-md-4 d-grid">
+                        <button type="submit" class="btn btn-primary">Check Availability</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="heritage-section text-center py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 mx-auto">
+                        <h2 class="section-title">A Palace Steeped In History</h2>
+                        <p class="lead">Built in 1880, The Royal Heritage Palace is more than just a hotel—it is a living museum. Each stone tells a story of royalty, valor, and timeless elegance. Once the abode of monarchs, it has been meticulously restored to offer you an immersive experience into a bygone era of splendor, blended seamlessly with modern luxuries.</p>
+                        <a href="about.html" class="btn btn-outline-primary">Discover Our Story</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer-section bg-dark text-white pt-5 pb-4">
+        <div class="container text-center text-md-start">
+            <div class="row">
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold">The Royal Heritage</h6>
+                    <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #D4AF37; height: 2px"/>
+                    <p>Experience the epitome of luxury where heritage is our hallmark and your comfort is our creed.</p>
+                </div>
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                     <h6 class="text-uppercase fw-bold">Quick Links</h6>
+                     <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #D4AF37; height: 2px"/>
+                     <p><a href="about.html" class="text-white">About Us</a></p>
+                     <p><a href="offers.html" class="text-white">Offers</a></p>
+                     <p><a href="gallery.html" class="text-white">Gallery</a></p>
+                     <p><a href="#!" class="text-white">Privacy Policy</a></p>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase fw-bold">Contact</h6>
+                    <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #D4AF37; height: 2px"/>
+                    <p>📍 Palace Road, Gwalior, India</p>
+                    <p>📧 reservations@royalheritage.com</p>
+                    <p>📞 +91 123 456 7890</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
